@@ -19,11 +19,11 @@ node scripts/smoke.mjs   # engine smoke tests (61 checks)
 
 ## 🌐 Live website
 
-The app is a static single-file site (`dist/index.html`, ~587 KB) and is deployed to **GitHub Pages** via the `.github/workflows/deploy.yml` workflow:
+The app is a static single-file site (`dist/index.html`, ~587 KB — zero external dependencies) and is designed to be served from **GitHub Pages** via the `docs/` folder already committed to this branch:
 
 - Live URL: **https://soulreaper1v221.github.io/JARVIS-V2/**
-- Every push to `main` or the arena branch rebuilds and republishes automatically.
-- **One-time setup:** enable Pages in the repo at *Settings → Pages → Source: **GitHub Actions***. The deploy job checks for this and publishes the moment it's on (no further changes needed).
+- **One-time setup (2 clicks):** repo → *Settings → Pages → Source: **Deploy from a branch*** → Branch: `arena/019fe969-jarvis-v2`, Folder: `/docs` → **Save**. GitHub serves `docs/index.html` automatically.
+- **Updating the site:** `npm run build && cp dist/index.html docs/index.html && git push` — the rebuilt single file lands in `docs/` and Pages picks it up on the next push.
 
 ## What JARVIS can do
 
