@@ -10,6 +10,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 // VitePWA  -> optional PWA hooks (kept inert: no manifest, no service worker)
 // viteSingleFile() -> inlines every asset into a single index.html
 export default defineConfig({
+  base: './', // portable: works under any URL path (GitHub Pages subpath, file://)
   plugins: [
     react(),
     tailwindcss(),
